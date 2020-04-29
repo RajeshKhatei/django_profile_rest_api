@@ -1,12 +1,29 @@
-VAGRANT
--------
+VAGRANT SERVER
+--------------
 vagrant init ubuntu/bionic64
+
+Edit the Vagrantfile
 
 vagrant up
 
-vagrant ssh
+vagrant ssh : Connect to Vagrant server
 
 exit
 
 cd /vagrant
 
+ls : we can see all local files sync(both direction) with Vagrant server (inside vagrant folder)
+
+python hello_world.py
+
+python -m venv ~/env : Created virtual environment in root folder named env
+
+source ~/env/bin/activate
+
+deactivate
+
+django-admin startproject profiles_project .  (. will create the project in root directory instead of creating extra folder with same name twice)
+
+python manage.py startapp profiles_api
+
+python manage.py runserver 0.0.0.0:8000
