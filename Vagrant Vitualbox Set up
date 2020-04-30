@@ -27,3 +27,9 @@ django-admin startproject profiles_project .  (. will create the project in root
 python manage.py startapp profiles_api
 
 python manage.py runserver 0.0.0.0:8000
+
+python manage.py makemigrations profiles_api
+
+python manage.py migrate
+
+
