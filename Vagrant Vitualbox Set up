@@ -34,4 +34,25 @@ python manage.py migrate
 
 python manage.py createsuperuser
 
+DEPLOY TO AWS
+-------------
 
+All configurations files are inside the "deploy" folder in the root directory of the project,
+
+setup.sh needs to run for set up the AWS server for the first time.
+
+update.sh needs to run for update the server and re-deploy the codes.
+
+chmod +x deploy/*.sh
+
+commit the codes to git
+
+ssh ubuntu@<Public DNS(IPv4)>
+
+curl -sL <raw content of setup.sh url> | sudo bash -    (bash : used to run our script, - : end of option provided to bash)
+
+cd /usr/local/apps/profiles-rest-api/
+
+sudo sh ./deploy/update.sh
+
+sudo env/bin/python manage.py createsuperuser
